@@ -17,7 +17,7 @@ class Graph:
                 self.eulerian_path_util(v, visited_edges)
 
     def is_eulerian_path_exist(self):
-        return all(len(self.graph[vertex]) == len([v for u, v in self.graph.keys() if u == vertex]) for vertex in self.vertices)
+        return all(len(self.graph[vertex]) == len([v for v in self.graph[vertex]]) for vertex in self.vertices)
 
     def eulerian_path(self):
         if not self.is_eulerian_path_exist():
